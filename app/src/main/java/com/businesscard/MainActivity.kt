@@ -65,7 +65,7 @@ fun Logo(name: String, title: String, modifier: Modifier = Modifier) {
     val image = painterResource(id = R.drawable.android_logo)
     
     Column(
-        modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 100.dp),
+        modifier = Modifier.padding(start = 120.dp, top = 200.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
@@ -78,10 +78,11 @@ fun Logo(name: String, title: String, modifier: Modifier = Modifier) {
         )
         Text(
             text = name,
+            fontSize = 25.sp,
         )
         Text(
             text = title,
-            fontSize = 10.sp,
+            fontSize = 16.sp,
             modifier = Modifier.padding(start = 20.dp, end = 20.dp,)
         )
     }
@@ -91,7 +92,7 @@ fun Logo(name: String, title: String, modifier: Modifier = Modifier) {
 fun ContactInfo(telephone: String, socialHandle: String, email: String, modifier: Modifier = Modifier) {
     val myAppIcons = Icons.Filled
     Column(
-        modifier = Modifier.padding(start = 40.dp, end = 20.dp, top = 70.dp, bottom = 30.dp)
+        modifier = Modifier.padding(start = 120.dp, top = 250.dp, bottom = 30.dp)
     ) {
         Row(
 
@@ -100,10 +101,10 @@ fun ContactInfo(telephone: String, socialHandle: String, email: String, modifier
                 imageVector = myAppIcons.Phone,
                 contentDescription = "phone number",
                 modifier = Modifier
-                    .size(width = 15.dp, height = 15.dp)
+                    .size(width = 20.dp, height = 20.dp)
                     .padding(end = 5.dp)
             )
-            Text(text = telephone, fontSize = 10.sp)
+            Text(text = telephone, fontSize = 16.sp)
         }
         Row(
 
@@ -112,10 +113,10 @@ fun ContactInfo(telephone: String, socialHandle: String, email: String, modifier
                 imageVector = myAppIcons.Share,
                 contentDescription = "social handle",
                 modifier = Modifier
-                    .size(width = 15.dp, height = 15.dp)
+                    .size(width = 20.dp, height = 20.dp)
                     .padding(end = 5.dp)
             )
-            Text(text = socialHandle, fontSize = 10.sp)
+            Text(text = socialHandle, fontSize = 16.sp)
         }
         Row(
 
@@ -124,10 +125,10 @@ fun ContactInfo(telephone: String, socialHandle: String, email: String, modifier
                 imageVector = myAppIcons.Email,
                 contentDescription = "email address",
                 modifier = Modifier
-                    .size(width = 15.dp, height = 15.dp)
+                    .size(width = 20.dp, height = 20.dp)
                     .padding(end = 5.dp)
             )
-            Text(text = email, fontSize = 10.sp)
+            Text(text = email, fontSize = 16.sp)
         }
 
     }
