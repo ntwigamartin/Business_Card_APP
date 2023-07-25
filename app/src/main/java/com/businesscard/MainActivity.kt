@@ -53,7 +53,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCard() {
     Column(
-
+        modifier = Modifier.background(Color.Cyan)
     ) {
         Logo(name = "Martin Ntwiga", title = "Android Engineer")
         ContactInfo(telephone = "254728692675", socialHandle = "@Manene", email = "ntwiga@gmail.com")
@@ -65,8 +65,8 @@ fun Logo(name: String, title: String, modifier: Modifier = Modifier) {
     val image = painterResource(id = R.drawable.android_logo)
     
     Column(
-        modifier = Modifier.padding(start = 20.dp, end = 20.dp),
-//        horizontalAlignment = Alignment.CenterHorizontally
+        modifier = Modifier.padding(start = 20.dp, end = 20.dp, top = 100.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = image,
@@ -82,7 +82,7 @@ fun Logo(name: String, title: String, modifier: Modifier = Modifier) {
         Text(
             text = title,
             fontSize = 10.sp,
-            modifier = Modifier.padding(start = 20.dp, end = 20.dp)
+            modifier = Modifier.padding(start = 20.dp, end = 20.dp,)
         )
     }
 }
@@ -91,25 +91,43 @@ fun Logo(name: String, title: String, modifier: Modifier = Modifier) {
 fun ContactInfo(telephone: String, socialHandle: String, email: String, modifier: Modifier = Modifier) {
     val myAppIcons = Icons.Filled
     Column(
-        modifier = Modifier.padding(start = 20.dp, end = 20.dp)
+        modifier = Modifier.padding(start = 40.dp, end = 20.dp, top = 70.dp, bottom = 30.dp)
     ) {
         Row(
 
         ) {
-            androidx.compose.material3.Icon(imageVector = myAppIcons.Phone, contentDescription = "phone number")
-            Text(text = telephone)
+            Icon(
+                imageVector = myAppIcons.Phone,
+                contentDescription = "phone number",
+                modifier = Modifier
+                    .size(width = 15.dp, height = 15.dp)
+                    .padding(end = 5.dp)
+            )
+            Text(text = telephone, fontSize = 10.sp)
         }
         Row(
 
         ) {
-            androidx.compose.material3.Icon(imageVector = myAppIcons.Share, contentDescription = "social handle")
-            Text(text = socialHandle)
+            Icon(
+                imageVector = myAppIcons.Share,
+                contentDescription = "social handle",
+                modifier = Modifier
+                    .size(width = 15.dp, height = 15.dp)
+                    .padding(end = 5.dp)
+            )
+            Text(text = socialHandle, fontSize = 10.sp)
         }
         Row(
 
         ) {
-            androidx.compose.material3.Icon(imageVector = myAppIcons.Email, contentDescription = "email address")
-            Text(text = email)
+            Icon(
+                imageVector = myAppIcons.Email,
+                contentDescription = "email address",
+                modifier = Modifier
+                    .size(width = 15.dp, height = 15.dp)
+                    .padding(end = 5.dp)
+            )
+            Text(text = email, fontSize = 10.sp)
         }
 
     }
